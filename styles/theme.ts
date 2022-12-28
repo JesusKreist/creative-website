@@ -9,49 +9,49 @@ import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 //   "2xl": "1440px",
 // };
 
-// const brandPrimaryOnLight = defineStyle({
-//   background: "black",
-//   color: "white",
-//   border: "2px solid black",
-//   borderRadius: "none",
-//   padding: "2rem 3rem",
-//   fontSize: "xl",
-//   fontWeight: "bold",
-//   letterSpacing: "0.25ch",
-//   _hover: {
-//     background: "white",
-//     color: "black",
-//     border: "2px solid black",
-//   },
-// });
+const brandRed = defineStyle({
+  background: "F94F4F",
+  color: "white",
+  borderRadius: "none",
+  padding: "2rem 3rem",
+  fontSize: "18px",
+  fontWeight: "ExtraBold",
+  _hover: {
+    background: "#FF9393",
+  },
+});
 
-// const brandPrimaryOnDark = defineStyle({
-//   color: "white",
-//   border: "2px solid white",
-//   borderRadius: "none",
-//   padding: "2rem 3rem",
-//   fontSize: "xl",
-//   fontWeight: "bold",
-//   letterSpacing: "0.25ch",
-//   _hover: {
-//     background: "white",
-//     color: "black",
-//     border: "2px solid white",
-//   },
-// });
+const brandBlack = defineStyle({
+  background: "#191921",
+  color: "white",
+  borderRadius: "none",
+  padding: "2rem 3rem",
+  fontSize: "18px",
+  fontWeight: "ExtraBold",
+  _hover: {
+    background: "#434356",
+  },
+});
 
-// export const buttonTheme = defineStyleConfig({
-//   variants: { brandPrimaryOnLight, brandPrimaryOnDark },
-// });
+export const buttonTheme = defineStyleConfig({
+  variants: { brandRed, brandBlack },
+});
+
+const colors = {
+  brand: {
+    red: "#F94F4F",
+    bgBlack: "#191921",
+  },
+};
 
 const theme = extendTheme({
   fonts: {
-    heading: `'League Spartan', sans-serif`,
-    body: `'League Spartan', sans-serif`,
+    heading: `'Commissioner', sans-serif`,
+    body: `'Commissioner', sans-serif`,
   },
-  //   components: {
-  //     Button: buttonTheme,
-  //   },
+  components: {
+    Button: buttonTheme,
+  },
   //   breakpoints,
 });
 
