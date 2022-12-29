@@ -7,9 +7,9 @@ interface MobileIconToShowProps {
 
 const MobileIconToShow: React.FC<MobileIconToShowProps> = ({ isMobileOpen }) =>
   isMobileOpen ? (
-    <Icon as={RxCross1} boxSize="3rem" />
+    <Icon as={RxCross1} boxSize="2rem" />
   ) : (
-    <Icon as={RxHamburgerMenu} boxSize="3rem" />
+    <Icon as={RxHamburgerMenu} boxSize="2rem" />
   );
 
 interface MobileMenuIconProps {
@@ -30,7 +30,7 @@ const MobileMenuIcon: React.FC<MobileMenuIconProps> = ({
     variant="unstyled"
     icon={<MobileIconToShow isMobileOpen={isMobileOpen} />}
     aria-label="Open Menu"
-    display={{ base: "inline-block", md: "none" }}
+    display={{ base: "inline-flex", md: "none" }}
   />
 );
 
