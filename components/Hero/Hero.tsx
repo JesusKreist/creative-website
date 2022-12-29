@@ -22,7 +22,7 @@ const Hero = () => {
         position="relative"
         height="100%"
         templateColumns={{
-          base: "repeat(18, 1fr)",
+          base: "repeat(16, 1fr)",
           md: "repeat(16, 1fr)",
           lg: "repeat(17, 1fr)",
         }}
@@ -36,27 +36,27 @@ const Hero = () => {
           xl: "blue",
           "2xl": "green",
         }}
+        rowGap="3rem"
       >
         <Flex
           direction="column"
-          //   height={{ lg: "379", xl: "528px" }}
           gridColumn={{
+            base: "2 / -2",
             md: "2 / span 7",
             lg: "3 / span 7",
             "2xl": "4 / span 7",
           }}
           gap="3rem"
-          gridRow="1 / 2"
+          gridRow={{ md: "1 / 2" }}
           zIndex="1"
           alignSelf="center"
           color="black"
-          justifyContent="space-between"
         >
           <Heading
-            fontSize={{ md: "3.5rem", xl: "5rem" }}
-            lineHeight={{ md: "3.5rem", xl: "5.5rem" }}
-            fontWeight={{ md: "extrabold", xl: "extrabold" }}
-            width={{ md: "398px", xl: "550px" }}
+            fontSize={{ base: "2.5rem", md: "3.5rem", xl: "5rem" }}
+            lineHeight={{ base: "2.5rem", md: "3.5rem", xl: "5.5rem" }}
+            fontWeight="extrabold"
+            width={{ base: "", md: "398px", xl: "550px" }}
           >
             Branding & website design agency
           </Heading>
