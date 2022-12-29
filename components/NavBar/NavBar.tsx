@@ -14,21 +14,10 @@ const NavBar: React.FC<NavBarProps> = ({ isMobileOpen, setIsMobileOpen }) => {
     <Box
       color="white"
       margin="0 auto"
-      width={{ "2xl": "100vw" }}
       maxWidth={{ "2xl": "1920px" }}
-      bg={{ lg: "linear-gradient(to left, #F94F4F, #F94F4F 47%, white 30%)" }}
       height={{ base: "120px", md: "178px" }}
       position="relative"
     >
-      {/* <Box
-        width="252px"
-        height="400px"
-        border="2px solid green"
-        position="absolute"
-        bgColor="black"
-        // top="100%"
-        zIndex="0"
-      ></Box> */}
       <Grid
         position="relative"
         height="100%"
@@ -38,7 +27,6 @@ const NavBar: React.FC<NavBarProps> = ({ isMobileOpen, setIsMobileOpen }) => {
           lg: "repeat(17, 1fr)",
         }}
         as="nav"
-        width={{ "2xl": "1440px" }}
         margin="0 auto"
         borderWidth="2px"
         borderColor={{
@@ -50,7 +38,13 @@ const NavBar: React.FC<NavBarProps> = ({ isMobileOpen, setIsMobileOpen }) => {
         }}
       >
         <Flex
-          gridColumn={{ base: "2 / span 8", md: "2 / 6", lg: "3 / span 3" }}
+          gridColumn={{
+            base: "2 / span 8",
+            md: "2 / 6",
+            lg: "3 / span 3",
+            xl: "3 / span 3",
+            "2xl": "4 / span 3",
+          }}
           height="100%"
           alignItems="center"
           width="100%"
@@ -63,15 +57,32 @@ const NavBar: React.FC<NavBarProps> = ({ isMobileOpen, setIsMobileOpen }) => {
           setIsMobileOpen={setIsMobileOpen}
         />
 
+        <Box
+          gridColumn={{
+            md: "8 / -1",
+            lg: "span 10 / -1",
+            xl: "span 9 / -1",
+            "2xl": "span 9 / -1",
+          }}
+          bgColor={{ md: "brand.red" }}
+          position="absolute"
+          height="100%"
+          width="100%"
+          zIndex="-1"
+        ></Box>
+
         <Flex
           display={{ base: "none", md: "flex" }}
           gap="2.5rem"
           width="100%"
-          justifyContent={{ base: "center", xl: "start" }}
-          paddingLeft={{ xl: "4rem" }}
-          gridColumn={{ md: "8 / -1", lg: "span 8 / -1" }}
+          justifyContent={{ base: "center", lg: "end" }}
+          gridColumn={{
+            md: "8 / -1",
+            lg: "span 7 / -3",
+            xl: "span 7 / -3",
+            "2xl": "span 7 / -4",
+          }}
           alignItems="center"
-          bgColor={{ md: "brand.red" }}
         >
           <NavBarLinks />
           <Button variant={{ base: "brandBlackSmall", xl: "brandBlackBig" }}>
