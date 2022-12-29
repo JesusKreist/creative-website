@@ -21,6 +21,7 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ isMobileOpen }) => (
     bgColor="brand.bgBlack"
     color="white"
     right="0"
+    zIndex={1000}
   >
     <List
       display="flex"
