@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Link,
-  List,
-  ListItem,
-  Text,
-} from "@chakra-ui/react";
+import { Box, Button, Link, List, ListItem } from "@chakra-ui/react";
 
 interface MobileMenuProps {
   isMobileOpen: boolean;
