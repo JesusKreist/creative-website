@@ -1,33 +1,36 @@
-import { Box, Button, Flex, Grid, Icon, IconButton } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { Box, Button, Flex, Grid } from "@chakra-ui/react";
+import React from "react";
 import Logo from "../Logo/Logo";
+import MobileMenuIcon from "./MobileMenuIcon";
 import NavBarLinks from "./NavBarLinks";
-import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 
-interface MobileMenuIconProps {
+interface NavBarProps {
   isMobileOpen: boolean;
+  setIsMobileOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const MobileMenuIcon: React.FC<MobileMenuIconProps> = ({ isMobileOpen }) =>
-  isMobileOpen ? (
-    <Icon as={RxCross1} boxSize="3rem" />
-  ) : (
-    <Icon as={RxHamburgerMenu} boxSize="3rem" />
-  );
-
-const NavBar = () => {
-  const [isMobileOpen, setIsMobileOpen] = useState(false);
-
+const NavBar: React.FC<NavBarProps> = ({ isMobileOpen, setIsMobileOpen }) => {
   return (
     <Box
       color="white"
-      height={{ base: "120px", md: "178px" }}
       margin="0 auto"
       width={{ "2xl": "100vw" }}
       maxWidth={{ "2xl": "1920px" }}
       bg={{ lg: "linear-gradient(to left, #F94F4F, #F94F4F 47%, white 30%)" }}
+      height={{ base: "120px", md: "178px" }}
+      position="relative"
     >
+      {/* <Box
+        width="252px"
+        height="400px"
+        border="2px solid green"
+        position="absolute"
+        bgColor="black"
+        // top="100%"
+        zIndex="0"
+      ></Box> */}
       <Grid
+        position="relative"
         height="100%"
         templateColumns={{
           base: "repeat(18, 1fr)",
@@ -55,20 +58,9 @@ const NavBar = () => {
           <Logo />
         </Flex>
 
-        {/* <Flex gridColumn="span 3 / -2">
-          <IconButton aria-label="Search database" icon={<HamburgerIcon />} />
-        </Flex> */}
-
-        <IconButton
-          onClick={() => setIsMobileOpen(!isMobileOpen)}
-          color="gray.500"
-          gridColumn="span 2 / -2"
-          alignSelf="center"
-          size="lg"
-          variant="unstyled"
-          // icon={<RxHamburgerMenu />}
-          icon={<MobileMenuIcon isMobileOpen={isMobileOpen} />}
-          aria-label="Open Menu"
+        <MobileMenuIcon
+          isMobileOpen={isMobileOpen}
+          setIsMobileOpen={setIsMobileOpen}
         />
 
         <Flex
