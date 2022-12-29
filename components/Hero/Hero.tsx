@@ -1,4 +1,13 @@
-import { Box, Grid, Image } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  Heading,
+  Image,
+  Text,
+} from "@chakra-ui/react";
+import HeroImage from "./HeroImage";
 
 const Hero = () => {
   return (
@@ -28,38 +37,44 @@ const Hero = () => {
           "2xl": "green",
         }}
       >
-        <Box
-          height="400px"
-          gridColumn="4 / span 7"
-          bgColor="yellow"
+        <Flex
+          direction="column"
+          //   height={{ lg: "379", xl: "528px" }}
+          gridColumn={{
+            md: "2 / span 7",
+            lg: "3 / span 7",
+            "2xl": "4 / span 7",
+          }}
+          gap="3rem"
           gridRow="1 / 2"
           zIndex="1"
-        ></Box>
-        <Box
-          gridColumn="span 10 / -1"
-          bgColor="blue"
-          gridRow="1 / 2"
-          width="100%"
+          alignSelf="center"
+          color="black"
+          justifyContent="space-between"
         >
-          <Box as="picture">
-            <Box
-              as="source"
-              media="(max-width: 400px)"
-              srcSet="/mobile/image-hero.jpg"
-            ></Box>
-            <Box
-              as="source"
-              media="(min-width: 400px) and (max-width: 960px)"
-              srcSet="/tablet/image-hero.jpg"
-            ></Box>
-            <Image
-              src="/desktop/image-hero.jpg"
-              alt="image describing the location for the family"
-              objectFit="fill"
-              width="100%"
-            />
-          </Box>
-        </Box>
+          <Heading
+            fontSize={{ md: "3.5rem", xl: "5rem" }}
+            lineHeight={{ md: "3.5rem", xl: "5.5rem" }}
+            fontWeight={{ md: "extrabold", xl: "extrabold" }}
+            width={{ md: "398px", xl: "550px" }}
+          >
+            Branding & website design agency
+          </Heading>
+          <Text
+            fontSize={{ lg: "1rem", xl: "1.125rem" }}
+            lineHeight={{ lg: "1.625rem", xl: "2rem" }}
+            fontWeight="normal"
+            width={{ lg: "398px", xl: "540px" }}
+          >
+            We specialize in visual storytelling by creating cohesive brand and
+            website design solutions for small businesses, giving lasting
+            impressions to audiences in a digital world.
+          </Text>
+          <Button variant="brandRedSmall" width="177px" height="72px">
+            Learn More
+          </Button>
+        </Flex>
+        <HeroImage />
       </Grid>
     </Box>
   );
