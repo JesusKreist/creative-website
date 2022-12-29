@@ -1,16 +1,24 @@
 import { extendTheme } from "@chakra-ui/react";
 import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 
+const breakpoints = {
+  sm: "320px",
+  md: "768px",
+  lg: "960px",
+  xl: "1200px",
+  "2xl": "1440px",
+};
+
 // const breakpoints = {
 //   sm: "320px",
 //   md: "768px",
 //   lg: "960px",
-//   xl: "1200px",
-//   "2xl": "1440px",
+//   xl: "1440px",
+//   "2xl": "1920px",
 // };
 
-const brandRed = defineStyle({
-  background: "F94F4F",
+const brandRedBig = defineStyle({
+  background: "#F94F4F",
   color: "white",
   borderRadius: "none",
   padding: "2rem 3rem",
@@ -21,11 +29,35 @@ const brandRed = defineStyle({
   },
 });
 
-const brandBlack = defineStyle({
+const brandBlackBig = defineStyle({
   background: "#191921",
   color: "white",
   borderRadius: "none",
-  padding: "2rem 3rem",
+  padding: "2rem 2rem",
+  fontSize: "18px",
+  fontWeight: "ExtraBold",
+  _hover: {
+    background: "#434356",
+  },
+});
+
+const brandRedSmall = defineStyle({
+  background: "#F94F4F",
+  color: "white",
+  borderRadius: "none",
+  padding: "2rem 1rem",
+  fontSize: "18px",
+  fontWeight: "ExtraBold",
+  _hover: {
+    background: "#FF9393",
+  },
+});
+
+const brandBlackSmall = defineStyle({
+  background: "#191921",
+  color: "white",
+  borderRadius: "none",
+  padding: "2rem 1rem",
   fontSize: "18px",
   fontWeight: "ExtraBold",
   _hover: {
@@ -34,7 +66,7 @@ const brandBlack = defineStyle({
 });
 
 export const buttonTheme = defineStyleConfig({
-  variants: { brandRed, brandBlack },
+  variants: { brandRedBig, brandBlackBig, brandRedSmall, brandBlackSmall },
 });
 
 const colors = {
@@ -52,7 +84,8 @@ const theme = extendTheme({
   components: {
     Button: buttonTheme,
   },
-  //   breakpoints,
+  colors,
+  breakpoints,
 });
 
 export default theme;
