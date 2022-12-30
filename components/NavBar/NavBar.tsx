@@ -3,6 +3,7 @@ import React from "react";
 import Logo from "../Logo/Logo";
 import MobileMenuIcon from "./MobileMenuIcon";
 import NavBarLinks from "./NavBarLinks";
+import RedBackground from "./RedBackground";
 
 interface NavBarProps {
   isMobileOpen: boolean;
@@ -56,39 +57,9 @@ const NavBar: React.FC<NavBarProps> = ({ isMobileOpen, setIsMobileOpen }) => {
           isMobileOpen={isMobileOpen}
           setIsMobileOpen={setIsMobileOpen}
         />
+        <RedBackground />
 
-        <Box
-          gridColumn={{
-            md: "8 / -1",
-            lg: "span 10 / -1",
-            xl: "span 9 / -1",
-            "2xl": "span 9 / -1",
-          }}
-          bgColor={{ md: "brand.red" }}
-          position="absolute"
-          height="100%"
-          width="100%"
-          zIndex="-1"
-        ></Box>
-
-        <Flex
-          display={{ base: "none", md: "flex" }}
-          gap="2.5rem"
-          width="100%"
-          justifyContent={{ base: "center", lg: "end" }}
-          gridColumn={{
-            md: "8 / -1",
-            lg: "span 7 / -3",
-            xl: "span 7 / -3",
-            "2xl": "span 7 / -4",
-          }}
-          alignItems="center"
-        >
-          <NavBarLinks />
-          <Button variant={{ base: "brandBlackSmall", xl: "brandBlackBig" }}>
-            Schedule a Call
-          </Button>
-        </Flex>
+        <NavBarLinks />
       </Grid>
     </Box>
   );

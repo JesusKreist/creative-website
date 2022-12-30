@@ -12,6 +12,7 @@ import Hero from "../Hero/Hero";
 import MobileMenu from "../MobileMenu";
 import NavBar from "../NavBar/NavBar";
 import NavBarLinks from "../NavBar/NavBarLinks";
+import Showcase from "../Showcase/Showcase";
 
 const Homepage = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -20,6 +21,7 @@ const Homepage = () => {
       <NavBar isMobileOpen={isMobileOpen} setIsMobileOpen={setIsMobileOpen} />
       <MobileMenu isMobileOpen={isMobileOpen} />
       <Hero />
+      <Showcase />
     </Box>
   );
 };

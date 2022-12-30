@@ -6,7 +6,6 @@ const HeroImage = () => {
       gridColumn={{ base: "1 / -1", md: "span 10 / -1" }}
       gridRow={{ base: "1", md: "1 / 2" }}
       width="100%"
-      bgColor="blue"
     >
       <Box as="picture" width="100%">
         <Box
