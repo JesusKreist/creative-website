@@ -18,7 +18,7 @@ const OurApproachText = () => {
       templateColumns={{ lg: "repeat(16, 1fr)" }}
     >
       <Box
-        gridRow="5 / span 3"
+        gridRow="5 / span 10"
         gridColumn="5 / -1"
         maxWidth="540px"
         color="black"

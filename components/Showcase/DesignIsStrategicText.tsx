@@ -26,16 +26,22 @@ const DesignIsStrategicText = () => {
       templateColumns={{ lg: "repeat(18, 1fr)" }}
       position="relative"
     >
-      <Box width="135px" position="absolute" top={{ lg: "170px" }} left="-70px">
+      <Box
+        width={{ lg: "100px", xl: "135px" }}
+        position="absolute"
+        top={{ lg: "200px", xl: "170px" }}
+        left={{ lg: "-50px", xl: "-70px" }}
+      >
         <Image src="/desktop/bg-pattern-wave-red.svg" alt=""></Image>
       </Box>
       <Flex
-        width="445px"
+        width="90%"
+        maxWidth="28rem"
         color="white"
         direction="column"
         gap="3.5rem"
         alignSelf="center"
-        gridColumn={{ lg: "4 / span 2" }}
+        gridColumn={{ lg: "4 / -1" }}
       >
         <Heading
           fontSize={{ base: "2.5rem", md: "3.5rem" }}

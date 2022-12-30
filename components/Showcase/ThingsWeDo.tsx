@@ -8,16 +8,16 @@ interface FeatureProps {
 const Feature: React.FC<FeatureProps> = ({ paddedNumber, heading, text }) => {
   return (
     <Flex
-      overflow="hidden"
+      // overflow="hidden"
       color="white"
-      width="504px"
-      height="196px"
+      width="90%"
+      maxWidth="504px"
       justifyContent="center"
       position="relative"
       paddingLeft="3.5rem"
     >
       <Flex
-        width="445px"
+        maxWidth="445px"
         direction="column"
         justifyContent="end"
         gap="1.5rem"
@@ -37,6 +37,7 @@ const Feature: React.FC<FeatureProps> = ({ paddedNumber, heading, text }) => {
         fontWeight="extrabold"
         lineHeight="5.5rem"
         left="0"
+        bottom="7rem"
         opacity="0.25"
       >
         {paddedNumber}
@@ -64,11 +65,11 @@ const ThingsWeDo = () => {
     >
       <Flex
         direction="column"
-        alignItems="center"
+        // alignItems="center"
         justify="center"
         height="100%"
         gap="4rem"
-        gridColumn={{ lg: "7 / span 9" }}
+        gridColumn={{ lg: "7 / -2" }}
       >
         <Feature
           heading="Brand Strategy"
