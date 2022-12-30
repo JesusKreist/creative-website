@@ -1,12 +1,10 @@
-import { Box, Flex, Grid, Text } from "@chakra-ui/react";
+import { Box, Grid, Text } from "@chakra-ui/react";
 
 const OurApproachText = () => {
   return (
     <Grid
       overflow="hidden"
       className="approach"
-      // alignSelf="center"
-      // justifySelf="end"
       gridColumn={{
         md: "8 / -1",
         lg: "1 / span 8",
@@ -20,10 +18,9 @@ const OurApproachText = () => {
       templateColumns={{ lg: "repeat(16, 1fr)" }}
     >
       <Box
-        gridRow="7 / span 3"
-        gridColumn="3 / span 2"
-        width="540px"
-        height="192px"
+        gridRow="5 / span 3"
+        gridColumn="5 / -1"
+        maxWidth="540px"
         color="black"
       >
         <Text fontSize="3.5rem" lineHeight="4rem" fontWeight="extrabold">
