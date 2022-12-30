@@ -7,7 +7,6 @@ import {
   Image,
   Grid,
 } from "@chakra-ui/react";
-import React from "react";
 
 const DesignIsStrategicText = () => {
   return (
@@ -23,14 +22,14 @@ const DesignIsStrategicText = () => {
       }}
       bgColor="brand.bgBlack"
       zIndex="1"
-      templateColumns={{ lg: "repeat(18, 1fr)" }}
+      templateColumns={{ md: "repeat(26, 1fr)", lg: "repeat(18, 1fr)" }}
       position="relative"
     >
       <Box
-        width={{ lg: "100px", xl: "135px" }}
+        width={{ md: "63px", lg: "100px", xl: "135px" }}
         position="absolute"
-        top={{ lg: "200px", xl: "170px" }}
-        left={{ lg: "-50px", xl: "-70px" }}
+        top={{ md: "141px", lg: "200px", xl: "170px" }}
+        left={{ md: "-30px", lg: "-50px", xl: "-70px" }}
       >
         <Image src="/desktop/bg-pattern-wave-red.svg" alt=""></Image>
       </Box>
@@ -39,23 +38,31 @@ const DesignIsStrategicText = () => {
         maxWidth="28rem"
         color="white"
         direction="column"
-        gap="3.5rem"
+        gap={{ md: "2.5rem", lg: "3.5rem" }}
         alignSelf="center"
-        gridColumn={{ lg: "4 / -1" }}
+        gridColumn={{ md: "5 / -1", lg: "4 / -1" }}
       >
         <Heading
-          fontSize={{ base: "2.5rem", md: "3.5rem" }}
-          lineHeight={{ base: "2.5rem", md: "3.5rem", xl: "4rem" }}
+          fontSize={{ base: "2.5rem", md: "2rem", lg: "3.5rem" }}
+          lineHeight={{
+            base: "2.5rem",
+            md: "2.5rem",
+            lg: "3.5rem",
+            xl: "4rem",
+          }}
           fontWeight="extrabold"
         >
           <Box as="span" color="brand.red">
             Design
           </Box>{" "}
-          is strategic
+          is{" "}
+          <Box as="span" display="block">
+            strategic
+          </Box>
         </Heading>
         <Text
-          fontSize={{ lg: "1rem", xl: "1.125rem" }}
-          lineHeight={{ lg: "1.625rem", xl: "2rem" }}
+          fontSize={{ md: "1rem", xl: "1.125rem" }}
+          lineHeight={{ md: "1.5625rem", lg: "1.625rem", xl: "2rem" }}
           fontWeight="normal"
         >
           “A well-crafted design strategy consistently produces desired outcomes
@@ -65,11 +72,11 @@ const DesignIsStrategicText = () => {
         <Box alignSelf="start">
           <Button
             variant="unstyled"
-            fontSize="1.125rem"
+            fontSize={{ md: "1rem", lg: "1.125rem" }}
             color="brand.red"
             borderRadius="none"
             borderBottom="1px solid red"
-            marginBlock="1rem"
+            // marginBlock="1rem"
             _hover={{
               color: "orange",
               borderBottom: "1px solid orange",
@@ -79,15 +86,6 @@ const DesignIsStrategicText = () => {
           </Button>
         </Box>
       </Flex>
-      {/* <Flex width="666px" height="100%" alignItems="center" marginLeft="-4rem">
-        <Flex gap="4rem">
-          <Box width="135px">
-            <Image src="/desktop/bg-pattern-wave-red.svg" alt=""></Image>
-          </Box>
-
-          
-        </Flex>
-      </Flex> */}
     </Grid>
   );
 };
