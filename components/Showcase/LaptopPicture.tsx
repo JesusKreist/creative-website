@@ -1,23 +1,46 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 
 const LaptopPicture = () => {
   return (
     <Box
       className="picture-laptop"
+      overflow="hidden"
+      position="relative"
       gridColumn={{
         md: "8 / -1",
         lg: "span 10 / -1",
         xl: "span 9 / -1",
         "2xl": "1 / span 8",
       }}
+      bgColor="pink"
       gridRow={{
         md: "8 / -1",
         lg: "span 10 / -1",
         xl: "span 9 / -1",
-        "2xl": "1 / span 17",
+        "2xl": "1 / span 13",
       }}
-      bgColor="pink"
-    ></Box>
+      zIndex="0"
+    >
+      <Box as="picture" width="100%">
+        <Box
+          as="source"
+          media="(max-width: 768px)"
+          srcSet="/mobile/image-strategic.jpg"
+        ></Box>
+        <Box
+          as="source"
+          media="(min-width: 768px) and (max-width: 960px)"
+          srcSet="/tablet/image-strategic.jpg"
+        ></Box>
+        <Image
+          src="/desktop/image-strategic.jpg"
+          alt="image of someone designing on a sketchpad"
+          // objectFit="cover"
+          width="100%"
+          // maxHeight="800px"
+        />
+      </Box>
+    </Box>
   );
 };
 
