@@ -24,18 +24,13 @@ const DesignIsStrategicText = () => {
         md: "8 / -1",
         lg: "span 10 / -1",
         xl: "span 9 / -1",
-        "2xl": "1 / span 5",
+        "2xl": "1 / span 10",
       }}
       bgColor="brand.bgBlack"
+      zIndex="1"
     >
-      <Flex
-        width="666px"
-        gap="8rem"
-        height="100%"
-        alignItems="center"
-        marginLeft="-4rem"
-      >
-        <Flex gap="6rem">
+      <Flex width="666px" height="100%" alignItems="center" marginLeft="-4rem">
+        <Flex gap="7rem">
           <Box width="135px">
             <Image src="/desktop/bg-pattern-wave-red.svg" alt=""></Image>
           </Box>
@@ -70,7 +65,7 @@ const DesignIsStrategicText = () => {
                 marginBlock="1rem"
                 _hover={{
                   color: "orange",
-                  "border-bottom": "1px solid orange",
+                  borderBottom: "1px solid orange",
                 }}
               >
                 Schedule a Call
