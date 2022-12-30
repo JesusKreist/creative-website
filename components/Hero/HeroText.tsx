@@ -17,6 +17,7 @@ const HeroText = () => {
       color="black"
     >
       <Heading
+        as="h1"
         fontSize={{ base: "2.5rem", md: "3.5rem", xl: "5rem" }}
         lineHeight={{ base: "2.5rem", md: "3.5rem", xl: "5.5rem" }}
         fontWeight="extrabold"
