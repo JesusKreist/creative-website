@@ -22,18 +22,12 @@ const Showcase = () => {
         height="1884px"
         templateColumns={{
           base: "repeat(16, 1fr)",
-          md: "repeat(16, 1fr)",
+          md: "repeat(21, 1fr)",
           lg: "repeat(17, 1fr)",
         }}
-        // templateRows={{
-        //   base: "repeat(16, 1fr)",
-        //   md: "repeat(16, 1fr)",
-        //   lg: "repeat(32, 1fr)",
-        // }}
-
         templateRows={{
           base: "repeat(16, 1fr)",
-          md: "repeat(16, 1fr)",
+          md: "repeat(24, 1fr)",
           lg: "repeat(24, 1fr)",
         }}
         as="section"
