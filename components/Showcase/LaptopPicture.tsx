@@ -7,12 +7,12 @@ const LaptopPicture = () => {
       overflow="hidden"
       position="relative"
       gridColumn={{
-        md: "1 / span 11",
+        md: "1 / span 12",
         lg: "1 / span 8",
         "2xl": "1 / span 8",
       }}
       gridRow={{
-        md: "1 / span 13",
+        md: "1 / span 15",
         lg: "1 / span 13",
         "2xl": "1 / span 13",
       }}

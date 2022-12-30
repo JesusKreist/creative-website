@@ -14,11 +14,11 @@ const DesignIsStrategicText = () => {
     <Grid
       className="strategic-design"
       gridColumn={{
-        md: "8 / -1",
+        md: "span 13 / -1",
         lg: "9 / -1",
       }}
       gridRow={{
-        md: "8 / -1",
+        md: "1 / span 12",
         lg: "1 / span 10",
       }}
       bgColor="brand.bgBlack"

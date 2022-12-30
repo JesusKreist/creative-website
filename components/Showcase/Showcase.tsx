@@ -19,15 +19,15 @@ const Showcase = () => {
         overflow="hidden"
         position="relative"
         // height="100%"
-        height="1884px"
+        height={{ md: "1335px", lg: "1884px" }}
         templateColumns={{
           base: "repeat(16, 1fr)",
-          md: "repeat(21, 1fr)",
+          md: "repeat(25, 1fr)",
           lg: "repeat(17, 1fr)",
         }}
         templateRows={{
           base: "repeat(16, 1fr)",
-          md: "repeat(24, 1fr)",
+          md: "repeat(30, 1fr)",
           lg: "repeat(24, 1fr)",
         }}
         as="section"

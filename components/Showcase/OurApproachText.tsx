@@ -6,11 +6,11 @@ const OurApproachText = () => {
       overflow="hidden"
       className="approach"
       gridColumn={{
-        md: "8 / -1",
+        md: "1 / span 11",
         lg: "1 / span 8",
       }}
       gridRow={{
-        md: "8 / -1",
+        md: "span 15 / -1",
         lg: "span 11 / -1",
       }}
       zIndex="4"
