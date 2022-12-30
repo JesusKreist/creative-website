@@ -13,8 +13,10 @@ const Showcase = () => {
       margin="0 auto"
       maxWidth="1920px"
       position="relative"
+      overflow="hidden"
     >
       <Grid
+        overflow="hidden"
         position="relative"
         // height="100%"
         height="1884px"
@@ -23,10 +25,16 @@ const Showcase = () => {
           md: "repeat(16, 1fr)",
           lg: "repeat(17, 1fr)",
         }}
+        // templateRows={{
+        //   base: "repeat(16, 1fr)",
+        //   md: "repeat(16, 1fr)",
+        //   lg: "repeat(32, 1fr)",
+        // }}
+
         templateRows={{
           base: "repeat(16, 1fr)",
           md: "repeat(16, 1fr)",
-          lg: "repeat(32, 1fr)",
+          lg: "repeat(24, 1fr)",
         }}
         as="section"
         margin="0 auto"
