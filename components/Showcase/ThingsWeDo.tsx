@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Grid, Heading, Text } from "@chakra-ui/react";
 
 interface FeatureProps {
   heading: string;
@@ -47,30 +47,20 @@ const Feature: React.FC<FeatureProps> = ({ paddedNumber, heading, text }) => {
 
 const ThingsWeDo = () => {
   return (
-    <Box
+    <Grid
       className="things-we-do"
       gridColumn={{
         md: "8 / -1",
-        lg: "span 10 / -1",
-        xl: "span 9 / -1",
-        "2xl": "span 11 / -1",
+        lg: "span 11 / -1",
       }}
-      //   gridRow={{
-      //     md: "8 / -1",
-      //     lg: "span 10 / -1",
-      //     xl: "span 9 / -1",
-      //     "2xl": "span 19 / -1",
-      //   }}
-
       gridRow={{
         md: "8 / -1",
-        lg: "span 10 / -1",
-        xl: "span 9 / -1",
-        "2xl": "span 14 / -1",
+        lg: "span 14 / -1",
       }}
       bgColor="brand.red"
-      //   width="895px"
       zIndex="3"
+      // paddingLeft="4rem"
+      templateColumns={{ lg: "repeat(22, 1fr)" }}
     >
       <Flex
         direction="column"
@@ -78,6 +68,7 @@ const ThingsWeDo = () => {
         justify="center"
         height="100%"
         gap="4rem"
+        gridColumn={{ lg: "7 / span 9" }}
       >
         <Feature
           heading="Brand Strategy"
@@ -95,7 +86,7 @@ const ThingsWeDo = () => {
           paddedNumber="03"
         />
       </Flex>
-    </Box>
+    </Grid>
   );
 };
 

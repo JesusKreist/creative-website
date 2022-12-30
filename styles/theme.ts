@@ -9,14 +9,6 @@ const breakpoints = {
   "2xl": "1440px",
 };
 
-// const breakpoints = {
-//   sm: "320px",
-//   md: "768px",
-//   lg: "960px",
-//   xl: "1440px",
-//   "2xl": "1920px",
-// };
-
 const brandRedBig = defineStyle({
   background: "#F94F4F",
   color: "white",

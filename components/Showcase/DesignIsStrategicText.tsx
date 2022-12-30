@@ -15,22 +15,18 @@ const DesignIsStrategicText = () => {
       className="strategic-design"
       gridColumn={{
         md: "8 / -1",
-        lg: "span 10 / -1",
-        xl: "span 9 / -1",
-        "2xl": "9 / -1",
+        lg: "9 / -1",
       }}
       gridRow={{
         md: "8 / -1",
-        lg: "span 10 / -1",
-        xl: "span 9 / -1",
-        "2xl": "1 / span 10",
+        lg: "1 / span 10",
       }}
       bgColor="brand.bgBlack"
       zIndex="1"
-      templateColumns={{ "2xl": "repeat(18, 1fr)" }}
+      templateColumns={{ lg: "repeat(18, 1fr)" }}
       position="relative"
     >
-      <Box width="135px" position="absolute" top="170px" left="-70px">
+      <Box width="135px" position="absolute" top={{ lg: "170px" }} left="-70px">
         <Image src="/desktop/bg-pattern-wave-red.svg" alt=""></Image>
       </Box>
       <Flex
@@ -39,7 +35,7 @@ const DesignIsStrategicText = () => {
         direction="column"
         gap="3.5rem"
         alignSelf="center"
-        gridColumn={{ "2xl": "4 / span 2" }}
+        gridColumn={{ lg: "4 / span 2" }}
       >
         <Heading
           fontSize={{ base: "2.5rem", md: "3.5rem" }}

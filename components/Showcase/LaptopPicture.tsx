@@ -8,20 +8,24 @@ const LaptopPicture = () => {
       position="relative"
       gridColumn={{
         md: "8 / -1",
-        lg: "span 10 / -1",
-        xl: "span 9 / -1",
+        lg: "1 / span 8",
         "2xl": "1 / span 8",
       }}
-      bgColor="pink"
       gridRow={{
         md: "8 / -1",
-        lg: "span 10 / -1",
-        xl: "span 9 / -1",
+        lg: "1 / span 13",
         "2xl": "1 / span 13",
       }}
       zIndex="0"
+      bgImage={{
+        base: "/mobile/image-strategic.jpg",
+        md: "/tablet/image-strategic.jpg",
+        lg: "/desktop/image-strategic.jpg",
+      }}
+      bgRepeat="no-repeat"
+      bgSize="cover"
     >
-      <Box as="picture" width="100%">
+      {/* <Box as="picture" width="100%">
         <Box
           as="source"
           media="(max-width: 768px)"
@@ -35,11 +39,11 @@ const LaptopPicture = () => {
         <Image
           src="/desktop/image-strategic.jpg"
           alt="image of someone designing on a sketchpad"
-          // objectFit="cover"
+          objectFit="cover"
           width="100%"
           // maxHeight="800px"
         />
-      </Box>
+      </Box> */}
     </Box>
   );
 };
