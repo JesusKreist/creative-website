@@ -10,7 +10,7 @@ const Feature: React.FC<FeatureProps> = ({ paddedNumber, heading, text }) => {
     <Flex
       // overflow="hidden"
       color="white"
-      width="90%"
+      width={{ md: "80%", lg: "90%" }}
       maxWidth="504px"
       justifyContent="center"
       position="relative"
@@ -23,10 +23,18 @@ const Feature: React.FC<FeatureProps> = ({ paddedNumber, heading, text }) => {
         gap="1.5rem"
         zIndex="1"
       >
-        <Heading fontSize="1.25rem" fontWeight="extrabold" lineHeight="2rem">
+        <Heading
+          as="h3"
+          fontSize={{ md: "1rem", lg: "1.25rem" }}
+          fontWeight="extrabold"
+          lineHeight={{ md: "1.5625rem", lg: "2rem" }}
+        >
           {heading}
         </Heading>
-        <Text fontSize="1.125rem" lineHeight="2rem">
+        <Text
+          fontSize={{ md: "1rem", lg: "1.125rem" }}
+          lineHeight={{ md: "1.5625rem", lg: "2rem" }}
+        >
           {text}
         </Text>
       </Flex>
@@ -36,8 +44,8 @@ const Feature: React.FC<FeatureProps> = ({ paddedNumber, heading, text }) => {
         fontSize="5rem"
         fontWeight="extrabold"
         lineHeight="5.5rem"
-        left="0"
-        bottom="7rem"
+        left={{ md: "3rem", lg: "0" }}
+        bottom={{ md: "5rem", lg: "7rem" }}
         opacity="0.25"
       >
         {paddedNumber}
