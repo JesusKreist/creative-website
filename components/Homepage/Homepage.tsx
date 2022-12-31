@@ -12,6 +12,7 @@ import Hero from "../Hero/Hero";
 import MobileMenu from "../MobileMenu";
 import NavBar from "../NavBar/NavBar";
 import NavBarLinks from "../NavBar/NavBarLinks";
+import OurOfferingsSlide from "../OurOfferingsSlide/OurOfferingsSlide";
 import Showcase from "../Showcase/Showcase";
 
 const Homepage = () => {
@@ -22,6 +23,7 @@ const Homepage = () => {
       <MobileMenu isMobileOpen={isMobileOpen} />
       <Hero />
       <Showcase />
+      <OurOfferingsSlide />
     </Box>
   );
 };
