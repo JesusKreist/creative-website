@@ -26,12 +26,12 @@ const SlideContainer: React.FC<SlideContainerProps> = ({ children }) => {
         }}
         templateRows={{
           base: "1fr 377px 218px 700px",
-          md: "repeat(30, 1fr)",
+          md: "repeat(15, 1fr)",
           lg: "repeat(15, 1fr)",
         }}
         as="section"
         margin="0 auto"
-        borderWidth="2px"
+        borderWidth="1px"
         borderColor={{
           sm: "yellow",
           md: "orange",

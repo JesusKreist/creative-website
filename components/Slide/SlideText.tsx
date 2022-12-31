@@ -7,7 +7,7 @@ const SlideText = () => {
       className="slider-text"
       gridColumn={{
         base: "1 / span 16",
-        md: "1 / span 11",
+        md: "1 / span 12",
         lg: "1 / span 8",
       }}
       gridRow="1 / span 11"
@@ -15,7 +15,7 @@ const SlideText = () => {
       zIndex="1"
       templateColumns={{
         base: "repeat(16, 1fr)",
-        md: "repeat(26, 1fr)",
+        md: "repeat(17, 1fr)",
         lg: "repeat(16, 1fr)",
       }}
       position="relative"
@@ -23,8 +23,8 @@ const SlideText = () => {
       <Box
         width={{ base: "63px", lg: "100px", xl: "135px" }}
         position="absolute"
-        right={{ xl: "-4rem" }}
-        top={{ xl: "11rem" }}
+        right={{ md: "-2rem", lg: "-3rem", xl: "-4rem" }}
+        top={{ md: "7rem", lg: "11rem", xl: "11rem" }}
         gridColumn={{ base: "2 / -2", md: "unset" }}
       >
         <Image src="/desktop/bg-pattern-wavy-white.svg" alt=""></Image>
@@ -36,12 +36,12 @@ const SlideText = () => {
         gridColumn={{
           base: "2 / -2",
           md: "3 / span 13",
-          lg: "span 8 / -3",
+          lg: "span 10 / -3",
           xl: "span 12 / -3",
           "2xl": "span 10 / -3",
         }}
         color={{ base: "white" }}
-        gap="4rem"
+        gap={{ md: "2rem", lg: "4rem" }}
         position="relative"
       >
         <Text
