@@ -1,18 +1,9 @@
-import {
-  Box,
-  Button,
-  Flex,
-  Link,
-  List,
-  ListItem,
-  Text,
-} from "@chakra-ui/react";
+import { Box } from "@chakra-ui/react";
 import React, { useState } from "react";
 import Hero from "../Hero/Hero";
 import MobileMenu from "../MobileMenu";
 import NavBar from "../NavBar/NavBar";
-import NavBarLinks from "../NavBar/NavBarLinks";
-import OurOfferingsSlide from "../OurOfferingsSlide/OurOfferingsSlide";
+import OurOfferingsSlide from "../Slide/Slide";
 import Showcase from "../Showcase/Showcase";
 
 const Homepage = () => {

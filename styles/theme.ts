@@ -9,6 +9,19 @@ const breakpoints = {
   "2xl": "1440px",
 };
 
+const brandRedOutline = defineStyle({
+  color: "#F94F4F",
+  // background: "white",
+  border: "2px solid #F94F4F",
+  padding: "2rem 3rem",
+  fontSize: "18px",
+  fontWeight: "ExtraBold",
+  _hover: {
+    color: "#FF9393",
+    border: "2px solid #FF9393",
+  },
+});
+
 const brandRedBig = defineStyle({
   background: "#F94F4F",
   color: "white",
@@ -58,7 +71,13 @@ const brandBlackSmall = defineStyle({
 });
 
 export const buttonTheme = defineStyleConfig({
-  variants: { brandRedBig, brandBlackBig, brandRedSmall, brandBlackSmall },
+  variants: {
+    brandRedOutline,
+    brandRedBig,
+    brandBlackBig,
+    brandRedSmall,
+    brandBlackSmall,
+  },
 });
 
 const colors = {

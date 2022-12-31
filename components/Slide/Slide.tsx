@@ -1,20 +1,22 @@
-import { Box, Grid } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  IconButton,
+  Text,
+  Image,
+} from "@chakra-ui/react";
 import React from "react";
+import { RxChevronLeft, RxChevronRight } from "react-icons/rx";
 import SlideContainer from "./SlideContainer";
+import SlideText from "./SlideText";
 
-const OurOfferingsSlide = () => {
+const Slide = () => {
   return (
     <SlideContainer>
-      <Box
-        gridColumn={{
-          base: "1 / span 16",
-          md: "1 / span 11",
-          lg: "1 / span 8",
-        }}
-        gridRow="1 / span 11"
-        bgColor="brand.bgBlack"
-        zIndex="1"
-      ></Box>
+      <SlideText />
+
       <Box
         gridColumn={{
           base: "1 / span 16",
@@ -30,4 +32,4 @@ const OurOfferingsSlide = () => {
   );
 };
 
-export default OurOfferingsSlide;
+export default Slide;
