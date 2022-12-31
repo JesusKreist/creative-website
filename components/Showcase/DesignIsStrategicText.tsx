@@ -13,6 +13,7 @@ const DesignIsStrategicText = () => {
     <Grid
       className="strategic-design"
       gridColumn={{
+        base: "1 / span 16",
         md: "span 13 / -1",
         lg: "9 / -1",
       }}
@@ -22,14 +23,19 @@ const DesignIsStrategicText = () => {
       }}
       bgColor="brand.bgBlack"
       zIndex="1"
-      templateColumns={{ md: "repeat(26, 1fr)", lg: "repeat(18, 1fr)" }}
+      templateColumns={{
+        base: "repeat(16, 1fr)",
+        md: "repeat(26, 1fr)",
+        lg: "repeat(18, 1fr)",
+      }}
       position="relative"
     >
       <Box
-        width={{ md: "63px", lg: "100px", xl: "135px" }}
+        width={{ base: "63px", lg: "100px", xl: "135px" }}
         position="absolute"
-        top={{ md: "141px", lg: "200px", xl: "170px" }}
+        top={{ base: "-15px", md: "141px", lg: "200px", xl: "170px" }}
         left={{ md: "-30px", lg: "-50px", xl: "-70px" }}
+        gridColumn={{ base: "2 / -2", md: "unset" }}
       >
         <Image src="/desktop/bg-pattern-wave-red.svg" alt=""></Image>
       </Box>
@@ -38,15 +44,14 @@ const DesignIsStrategicText = () => {
         maxWidth="28rem"
         color="white"
         direction="column"
-        gap={{ md: "2.5rem", lg: "3.5rem" }}
+        gap={{ base: "2rem", md: "2.5rem", lg: "3.5rem" }}
         alignSelf="center"
-        gridColumn={{ md: "5 / -1", lg: "4 / -1" }}
+        gridColumn={{ base: "2 / -2", md: "5 / -1", lg: "4 / -1" }}
       >
         <Heading
-          fontSize={{ base: "2.5rem", md: "2rem", lg: "3.5rem" }}
+          fontSize={{ base: "2rem", lg: "3.5rem" }}
           lineHeight={{
             base: "2.5rem",
-            md: "2.5rem",
             lg: "3.5rem",
             xl: "4rem",
           }}
@@ -56,13 +61,13 @@ const DesignIsStrategicText = () => {
             Design
           </Box>{" "}
           is{" "}
-          <Box as="span" display="block">
+          <Box as="span" display={{ md: "block" }}>
             strategic
           </Box>
         </Heading>
         <Text
-          fontSize={{ md: "1rem", xl: "1.125rem" }}
-          lineHeight={{ md: "1.5625rem", lg: "1.625rem", xl: "2rem" }}
+          fontSize={{ base: "1rem", xl: "1.125rem" }}
+          lineHeight={{ base: "1.5625rem", lg: "1.625rem", xl: "2rem" }}
           fontWeight="normal"
         >
           “A well-crafted design strategy consistently produces desired outcomes
@@ -76,7 +81,7 @@ const DesignIsStrategicText = () => {
             color="brand.red"
             borderRadius="none"
             borderBottom="1px solid red"
-            // marginBlock="1rem"
+            marginTop={{ base: "1rem", md: "unset" }}
             _hover={{
               color: "orange",
               borderBottom: "1px solid orange",

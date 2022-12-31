@@ -10,11 +10,11 @@ const Feature: React.FC<FeatureProps> = ({ paddedNumber, heading, text }) => {
     <Flex
       // overflow="hidden"
       color="white"
-      width={{ md: "80%", lg: "90%" }}
-      maxWidth="504px"
+      width={{ base: "95%", md: "80%", lg: "90%" }}
+      maxWidth={{ base: "400px", md: "504px" }}
       justifyContent="center"
       position="relative"
-      paddingLeft="3.5rem"
+      paddingLeft={{ base: "2.5rem", md: "3.5rem" }}
     >
       <Flex
         maxWidth="445px"
@@ -44,8 +44,8 @@ const Feature: React.FC<FeatureProps> = ({ paddedNumber, heading, text }) => {
         fontSize="5rem"
         fontWeight="extrabold"
         lineHeight="5.5rem"
-        left={{ md: "3rem", lg: "0" }}
-        bottom={{ md: "5rem", lg: "7rem" }}
+        left={{ base: "2.5rem", md: "3rem", lg: "0" }}
+        bottom={{ base: "4.8rem", md: "5rem", lg: "7rem" }}
         opacity="0.25"
       >
         {paddedNumber}
@@ -59,6 +59,7 @@ const ThingsWeDo = () => {
     <Grid
       className="things-we-do"
       gridColumn={{
+        base: "1 / span 16",
         md: "span 14 / -1",
         lg: "span 11 / -1",
       }}

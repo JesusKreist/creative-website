@@ -18,7 +18,6 @@ const Showcase = () => {
       <Grid
         overflow="hidden"
         position="relative"
-        // height="100%"
         height={{ md: "1335px", lg: "1884px" }}
         templateColumns={{
           base: "repeat(16, 1fr)",
@@ -26,7 +25,7 @@ const Showcase = () => {
           lg: "repeat(17, 1fr)",
         }}
         templateRows={{
-          base: "repeat(16, 1fr)",
+          base: "1fr 377px 218px 700px",
           md: "repeat(30, 1fr)",
           lg: "repeat(24, 1fr)",
         }}

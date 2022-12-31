@@ -18,6 +18,7 @@ const Hero = () => {
       margin="0 auto"
       maxWidth="1920px"
       position="relative"
+      paddingBottom={{ base: "6rem", md: "unset" }}
     >
       <Grid
         position="relative"
