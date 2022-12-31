@@ -30,7 +30,13 @@ const OurApproachText = () => {
     >
       <Box
         gridRow={{ md: "5 / span 10" }}
-        gridColumn={{ base: "2 / -2", md: "3 / span 13", lg: "5 / -1" }}
+        gridColumn={{
+          base: "2 / -2",
+          md: "3 / span 13",
+          lg: "5 / -1",
+          xl: "span 12 / -3",
+          "2xl": "5 / -1",
+        }}
         maxWidth="540px"
         color={{ base: "white", md: "black" }}
       >
