@@ -1,6 +1,16 @@
 import { Box, Flex, Grid, Text, Image } from "@chakra-ui/react";
 
-const SlideImage = () => {
+interface SlideImageProps {
+  image: string;
+  projectYear: number;
+  projectName: string;
+}
+
+const SlideImage: React.FC<SlideImageProps> = ({
+  image,
+  projectYear,
+  projectName,
+}) => {
   return (
     <>
       <Grid
@@ -14,7 +24,7 @@ const SlideImage = () => {
         gridRow="1 / -1"
         templateColumns={{ md: "repeat(21, 1fr)" }}
         templateRows={{ md: "repeat(34, 1fr)" }}
-        bgImage="/mobile/image-slide-1.jpg"
+        bgImage={{ md: `/tablet/${image}`, lg: `/desktop/${image}` }}
         bgSize="cover"
         bgRepeat="no-repeat"
       >
@@ -26,8 +36,8 @@ const SlideImage = () => {
           fontSize={{ base: "", md: "1rem", xl: "1.25rem" }}
           lineHeight={{ base: "", md: "1.25rem", lg: "", xl: "2rem" }}
         >
-          <Text fontWeight="extrabold">Lean Product Roadmap</Text>
-          <Text>2019 Project</Text>
+          <Text fontWeight="extrabold">{projectName}</Text>
+          <Text>{projectYear} Project</Text>
         </Box>
       </Grid>
       <Box
@@ -47,22 +57,12 @@ const SlideImage = () => {
           fontSize={{ base: "", md: "1rem", xl: "1.25rem" }}
           lineHeight={{ base: "", md: "1.25rem", lg: "", xl: "2rem" }}
         >
-          <Text fontWeight="extrabold">Lean Product Roadmap</Text>
-          <Text>2019 Project</Text>
+          <Text fontWeight="extrabold">{projectName}</Text>
+          <Text>{projectYear} Project</Text>
         </Box>
         <Box as="picture" width="100%">
-          <Box
-            as="source"
-            media="(max-width: 768px)"
-            srcSet="/mobile/image-slide-1.jpg"
-          ></Box>
-          <Box
-            as="source"
-            media="(min-width: 768px) and (max-width: 960px)"
-            srcSet="/tablet/image-slide-1.jpg"
-          ></Box>
           <Image
-            src="/mobile/image-slide-1.jpg"
+            src={`/mobile/${image}`}
             alt=""
             objectFit="cover"
             width="100%"

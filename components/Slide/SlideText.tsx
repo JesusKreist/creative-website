@@ -1,7 +1,17 @@
 import { Grid, Flex, IconButton, Box, Text, Image } from "@chakra-ui/react";
 import { RxChevronLeft, RxChevronRight } from "react-icons/rx";
 
-const SlideText = () => {
+interface SlideTextProps {
+  slideTagLine: string;
+  handlePreviousSlide: () => void;
+  handleNextSlide: () => void;
+}
+
+const SlideText: React.FC<SlideTextProps> = ({
+  slideTagLine,
+  handleNextSlide,
+  handlePreviousSlide,
+}) => {
   return (
     <Grid
       className="slider-text"
@@ -48,7 +58,7 @@ const SlideText = () => {
           lineHeight={{ base: "2.5rem", lg: "4rem" }}
           fontWeight="extrabold"
         >
-          Brand naming & guidelines
+          {slideTagLine}
         </Text>
         <Flex gap="2rem">
           <IconButton
@@ -57,6 +67,7 @@ const SlideText = () => {
             aria-label="left arrow icon"
             fontSize="20px"
             icon={<RxChevronLeft />}
+            onClick={handlePreviousSlide}
           />
           <IconButton
             variant="brandRedOutline"
@@ -64,6 +75,7 @@ const SlideText = () => {
             aria-label="right arrow icon"
             fontSize="20px"
             icon={<RxChevronRight />}
+            onClick={handleNextSlide}
           />
         </Flex>
       </Flex>
