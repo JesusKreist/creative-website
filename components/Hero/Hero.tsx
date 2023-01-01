@@ -30,14 +30,6 @@ const Hero = () => {
         }}
         as="nav"
         margin="0 auto"
-        borderWidth="2px"
-        borderColor={{
-          sm: "yellow",
-          md: "orange",
-          lg: "red",
-          xl: "blue",
-          "2xl": "green",
-        }}
         rowGap="3rem"
       >
         <HeroText />

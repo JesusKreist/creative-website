@@ -32,16 +32,7 @@ const FooterContainer: React.FC<FooterContainerProps> = ({ children }) => {
         gridRowGap={{ base: "2rem", md: "unset" }}
         as="section"
         margin="0 auto"
-        borderWidth="1px"
-        borderColor={{
-          sm: "yellow",
-          md: "orange",
-          lg: "red",
-          xl: "blue",
-          "2xl": "green",
-        }}
         alignItems={{ base: "center", md: "center" }}
-        // overflow="hidden"
         paddingBlock={{ base: "2.5rem", md: "unset" }}
       >
         <Box

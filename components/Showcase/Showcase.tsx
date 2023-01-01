@@ -31,14 +31,6 @@ const Showcase = () => {
         }}
         as="section"
         margin="0 auto"
-        borderWidth="2px"
-        borderColor={{
-          sm: "yellow",
-          md: "orange",
-          lg: "red",
-          xl: "blue",
-          "2xl": "green",
-        }}
       >
         <LaptopPicture />
         <DesignIsStrategicText />

@@ -29,14 +29,6 @@ const SlideContainer: React.FC<SlideContainerProps> = ({ children }) => {
         }}
         as="section"
         margin="0 auto"
-        borderWidth="1px"
-        borderColor={{
-          sm: "yellow",
-          md: "orange",
-          lg: "red",
-          xl: "blue",
-          "2xl": "green",
-        }}
       >
         {children}
       </Grid>
