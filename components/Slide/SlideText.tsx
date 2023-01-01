@@ -46,7 +46,7 @@ const SlideText: React.FC<SlideTextProps> = ({
           base: "2 / -2",
           md: "3 / span 13",
           lg: "span 10 / -3",
-          xl: "span 12 / -3",
+          xl: "5 / 15",
           "2xl": "span 10 / -3",
         }}
         color={{ base: "white" }}
