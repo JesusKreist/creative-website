@@ -5,6 +5,7 @@ import MobileMenu from "../MobileMenu";
 import NavBar from "../NavBar/NavBar";
 import OurOfferingsSlide from "../Slide/Slide";
 import Showcase from "../Showcase/Showcase";
+import Footer from "../Footer/Footer";
 
 const Homepage = () => {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
@@ -15,6 +16,7 @@ const Homepage = () => {
       <Hero />
       <Showcase />
       <OurOfferingsSlide />
+      <Footer />
     </Box>
   );
 };

@@ -44,7 +44,6 @@ const Slide = () => {
   };
 
   useEffect(() => {
-    console.log(currentSlide);
     setCurrentSlide(slides[currentSlideIndex]);
   }, [currentSlideIndex, currentSlide]);
 
