@@ -28,7 +28,7 @@ const Hero = () => {
           md: "repeat(16, 1fr)",
           lg: "repeat(17, 1fr)",
         }}
-        as="nav"
+        as="section"
         margin="0 auto"
         rowGap="3rem"
       >
