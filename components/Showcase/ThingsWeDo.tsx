@@ -8,7 +8,6 @@ interface FeatureProps {
 const Feature: React.FC<FeatureProps> = ({ paddedNumber, heading, text }) => {
   return (
     <Flex
-      // overflow="hidden"
       color="white"
       width={{ base: "95%", md: "80%", lg: "90%" }}
       maxWidth={{ base: "400px", md: "504px" }}
@@ -17,20 +16,34 @@ const Feature: React.FC<FeatureProps> = ({ paddedNumber, heading, text }) => {
       paddingLeft={{ base: "2.5rem", md: "3.5rem" }}
     >
       <Flex
-        maxWidth="445px"
+        maxWidth={{ base: "400px", md: "445px" }}
         direction="column"
         justifyContent="end"
         gap="1.5rem"
         zIndex="1"
       >
-        <Heading
-          as="h3"
-          fontSize={{ md: "1rem", lg: "1.25rem" }}
-          fontWeight="extrabold"
-          lineHeight={{ md: "1.5625rem", lg: "2rem" }}
-        >
-          {heading}
-        </Heading>
+        <Box position="relative">
+          <Heading
+            as="h3"
+            fontSize={{ md: "1rem", lg: "1.25rem" }}
+            fontWeight="extrabold"
+            lineHeight={{ md: "1.5625rem", lg: "2rem" }}
+          >
+            {heading}
+          </Heading>
+          <Text
+            position="absolute"
+            fontSize="5rem"
+            fontWeight="extrabold"
+            lineHeight="5.5rem"
+            left={{ base: "-1rem", md: "-1rem", lg: "-3.5rem" }}
+            bottom={{ base: "-1.25rem", md: "-1.25rem", lg: "-0.7rem" }}
+            opacity="0.25"
+          >
+            {paddedNumber}
+          </Text>
+        </Box>
+
         <Text
           fontSize={{ md: "1rem", lg: "1.125rem" }}
           lineHeight={{ md: "1.5625rem", lg: "2rem" }}
@@ -38,18 +51,6 @@ const Feature: React.FC<FeatureProps> = ({ paddedNumber, heading, text }) => {
           {text}
         </Text>
       </Flex>
-
-      <Text
-        position="absolute"
-        fontSize="5rem"
-        fontWeight="extrabold"
-        lineHeight="5.5rem"
-        left={{ base: "2.5rem", md: "3rem", lg: "0" }}
-        bottom={{ base: "4.8rem", md: "5rem", lg: "7rem" }}
-        opacity="0.25"
-      >
-        {paddedNumber}
-      </Text>
     </Flex>
   );
 };
