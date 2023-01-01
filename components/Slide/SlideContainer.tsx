@@ -13,19 +13,17 @@ const SlideContainer: React.FC<SlideContainerProps> = ({ children }) => {
       margin="0 auto"
       maxWidth="1920px"
       position="relative"
-      overflow="hidden"
     >
       <Grid
-        overflow="hidden"
         position="relative"
         height={{ md: "472px", lg: "728px" }}
         templateColumns={{
-          base: "repeat(16, 1fr)",
+          base: "1fr",
           md: "repeat(25, 1fr)",
           lg: "repeat(17, 1fr)",
         }}
         templateRows={{
-          base: "1fr 377px 218px 700px",
+          base: "1fr 375px",
           md: "repeat(15, 1fr)",
           lg: "repeat(15, 1fr)",
         }}
