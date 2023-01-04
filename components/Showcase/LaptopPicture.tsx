@@ -1,9 +1,28 @@
 import { Box, Image } from "@chakra-ui/react";
+import { motion, Variants } from "framer-motion";
+import ChakraMotionBox from "../MotionComponents/ChakraMotionBox";
+
+const cardVariants: Variants = {
+  offscreen: {
+    scale: 0,
+    x: -90,
+  },
+  onscreen: {
+    scale: 1,
+    x: 0,
+    transition: { x: { duration: 1 } },
+  },
+};
 
 const LaptopPicture = () => {
   return (
     <>
       <Box
+        as={motion.div}
+        variants={cardVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
         className="picture-laptop"
         overflow="hidden"
         position="relative"
@@ -29,7 +48,11 @@ const LaptopPicture = () => {
         display={{ base: "none", md: "block" }}
       ></Box>
 
-      <Box
+      <ChakraMotionBox
+        variants={cardVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
         display={{ base: "block", md: "none" }}
         gridColumn={{ base: "1 / -1" }}
         gridRow={{ base: "1", md: "1 / 2" }}
@@ -54,7 +77,7 @@ const LaptopPicture = () => {
             maxHeight="800px"
           />
         </Box>
-      </Box>
+      </ChakraMotionBox>
     </>
   );
 };
