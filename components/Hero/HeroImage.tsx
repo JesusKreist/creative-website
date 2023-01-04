@@ -1,11 +1,16 @@
 import { Box, Image } from "@chakra-ui/react";
+import { slideFromRight } from "../../animation/animationVariants";
+import ChakraMotionBox from "../MotionComponents/ChakraMotionBox";
 
 const HeroImage = () => {
   return (
-    <Box
+    <ChakraMotionBox
       gridColumn={{ base: "1 / -1", md: "span 10 / -1" }}
       gridRow={{ base: "1", md: "1 / 2" }}
       width="100%"
+      variants={slideFromRight(1)}
+      initial="start"
+      animate="end"
     >
       <Box as="picture" width="100%">
         <Box
@@ -26,7 +31,7 @@ const HeroImage = () => {
           maxHeight="800px"
         />
       </Box>
-    </Box>
+    </ChakraMotionBox>
   );
 };
 
