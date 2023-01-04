@@ -1,5 +1,7 @@
 import { Button, Flex, Link, List, ListItem } from "@chakra-ui/react";
+import { AnimationProps, motion } from "framer-motion";
 import React from "react";
+import { slideFromRight } from "../../animation/animationVariants";
 
 const NavBarLinkItems = () => {
   return (
@@ -20,6 +22,10 @@ const NavBarLinkItems = () => {
 const NavBarLinks = () => {
   return (
     <Flex
+      as={motion.div}
+      variants={slideFromRight()}
+      initial="start"
+      animate="end"
       className="nav-links"
       display={{ base: "none", md: "flex" }}
       gap="2.5rem"
