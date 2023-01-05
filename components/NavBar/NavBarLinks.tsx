@@ -1,5 +1,5 @@
 import { Button, Flex, Link, List, ListItem } from "@chakra-ui/react";
-import { AnimationProps, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import React from "react";
 import { slideFromRight } from "../../animation/animationVariants";
 
@@ -7,13 +7,19 @@ const NavBarLinkItems = () => {
   return (
     <List display="flex" alignItems="center" gap="2rem">
       <Link href="/about">
-        <ListItem>About</ListItem>
+        <ListItem as={motion.li} whileHover={{ scale: 1.3, originX: 0 }}>
+          About
+        </ListItem>
       </Link>
       <Link href="/service">
-        <ListItem>Service</ListItem>
+        <ListItem as={motion.li} whileHover={{ scale: 1.3, originX: 0 }}>
+          Service
+        </ListItem>
       </Link>
       <Link href="/projects">
-        <ListItem>Projects</ListItem>
+        <ListItem as={motion.li} whileHover={{ scale: 1.3, originX: 0 }}>
+          Projects
+        </ListItem>
       </Link>
     </List>
   );
