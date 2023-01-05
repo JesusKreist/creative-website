@@ -7,8 +7,19 @@ import {
   Image,
   Grid,
 } from "@chakra-ui/react";
+import { motion, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
+import ChakraMotionBox from "../MotionComponents/ChakraMotionBox";
+
+const textBoxVariants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 1 } },
+};
 
 const DesignIsStrategicText = () => {
+  const boxRef = useRef(null);
+  const isInView = useInView(boxRef, { once: true });
+
   return (
     <Grid
       className="strategic-design"
@@ -29,6 +40,7 @@ const DesignIsStrategicText = () => {
         lg: "repeat(18, 1fr)",
       }}
       position="relative"
+      ref={boxRef}
     >
       <Box
         width={{ base: "63px", lg: "100px", xl: "135px" }}
@@ -39,7 +51,11 @@ const DesignIsStrategicText = () => {
       >
         <Image src="/desktop/bg-pattern-wave-red.svg" alt=""></Image>
       </Box>
+
       <Flex
+        transform={isInView ? "none" : "translateX(100vw)"}
+        opacity={isInView ? 1 : 0}
+        transition="all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
         width="90%"
         maxWidth="28rem"
         color="white"
