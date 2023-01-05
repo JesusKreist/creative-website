@@ -1,9 +1,19 @@
 import { Text } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 import React from "react";
+import { slideFromLeft } from "../../animation/animationVariants";
 
-const FooterText = () => {
+interface FooterTextProps {
+  isInView: boolean;
+}
+
+const FooterText: React.FC<FooterTextProps> = ({ isInView }) => {
   return (
     <Text
+      as={motion.p}
+      variants={slideFromLeft()}
+      initial="start"
+      animate={isInView ? "end" : ""}
       color="black"
       gridRow="1"
       gridColumn={{

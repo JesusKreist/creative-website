@@ -1,11 +1,16 @@
 import { Button } from "@chakra-ui/react";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 import FooterContainer from "./FooterContainer";
 import FooterText from "./FooterText";
 
 const Footer = () => {
+  const boxRef = useRef(null);
+  const isInView = useInView(boxRef, { once: true });
+
   return (
-    <FooterContainer>
-      <FooterText />
+    <FooterContainer ref={boxRef}>
+      <FooterText isInView={isInView} />
       <Button
         variant={{ base: "brandRedSmall", xl: "brandRedBig" }}
         width="200px"
