@@ -46,10 +46,10 @@ const SlideText: React.FC<SlideTextProps> = ({
         <Image src="/desktop/bg-pattern-wavy-white.svg" alt=""></Image>
       </Box>
       <Flex
-        as={motion.div}
-        variants={slideFromLeft()}
-        initial="start"
-        animate={isInView ? "end" : ""}
+        // as={motion.div}
+        // variants={slideFromLeft()}
+        // initial="start"
+        // animate={isInView ? "end" : ""}
         direction="column"
         height="100%"
         justifyContent="center"
