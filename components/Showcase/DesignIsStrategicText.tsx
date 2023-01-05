@@ -9,16 +9,15 @@ import {
 } from "@chakra-ui/react";
 import { motion, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
-import ChakraMotionBox from "../MotionComponents/ChakraMotionBox";
-
-const textBoxVariants = {
-  initial: { opacity: 0 },
-  animate: { opacity: 1, transition: { duration: 1 } },
-};
+import { slideFromRight } from "../../animation/animationVariants";
 
 const DesignIsStrategicText = () => {
   const boxRef = useRef(null);
   const isInView = useInView(boxRef, { once: true });
+
+  useEffect(() => {
+    console.log("Element is in view: ", isInView);
+  }, [isInView]);
 
   return (
     <Grid
@@ -53,9 +52,10 @@ const DesignIsStrategicText = () => {
       </Box>
 
       <Flex
-        transform={isInView ? "none" : "translateX(100vw)"}
-        opacity={isInView ? 1 : 0}
-        transition="all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
+        as={motion.div}
+        variants={slideFromRight()}
+        initial="start"
+        animate={isInView ? "end" : ""}
         width="90%"
         maxWidth="28rem"
         color="white"
