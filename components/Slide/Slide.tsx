@@ -14,6 +14,7 @@ import SlideImage from "./SlideImage";
 import SlideText from "./SlideText";
 import { slides } from "./slides";
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
 
 const Slide = () => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
@@ -49,20 +50,22 @@ const Slide = () => {
 
   return (
     <SlideContainer>
-      <SlideText
-        slideTagLine={currentSlide.slideTagLine}
-        handlePreviousSlide={() =>
-          prevSlide(currentSlideIndex, setCurrentSlideIndex)
-        }
-        handleNextSlide={() =>
-          nextSlide(currentSlideIndex, setCurrentSlideIndex)
-        }
-      />
-      <SlideImage
-        image={currentSlide.image}
-        projectYear={2019}
-        projectName={currentSlide.projectName}
-      />
+      <AnimatePresence>
+        <SlideText
+          slideTagLine={currentSlide.slideTagLine}
+          handlePreviousSlide={() =>
+            prevSlide(currentSlideIndex, setCurrentSlideIndex)
+          }
+          handleNextSlide={() =>
+            nextSlide(currentSlideIndex, setCurrentSlideIndex)
+          }
+        />
+        <SlideImage
+          image={currentSlide.image}
+          projectYear={2019}
+          projectName={currentSlide.projectName}
+        />
+      </AnimatePresence>
     </SlideContainer>
   );
 };

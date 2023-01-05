@@ -21,3 +21,9 @@ export const slides = [
     image: "image-slide-3.jpg",
   },
 ];
+
+export interface SlideImageProps {
+  image: string;
+  projectYear: number;
+  projectName: string;
+}

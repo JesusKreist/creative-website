@@ -1,5 +1,7 @@
 import { Box, Flex, Grid, Text, Image } from "@chakra-ui/react";
 import { motion, Variants } from "framer-motion";
+import SlideLargeImage from "./SlideLargeImage";
+import { SlideImageProps } from "./slides";
 
 const cardVariants: Variants = {
   offscreen: {
@@ -11,13 +13,11 @@ const cardVariants: Variants = {
     x: 0,
     transition: { x: { duration: 1 } },
   },
+  exit: {
+    x: "-100vw",
+    transition: { ease: "easeInOut" },
+  },
 };
-
-interface SlideImageProps {
-  image: string;
-  projectYear: number;
-  projectName: string;
-}
 
 const SlideImage: React.FC<SlideImageProps> = ({
   image,
@@ -26,44 +26,18 @@ const SlideImage: React.FC<SlideImageProps> = ({
 }) => {
   return (
     <>
+      <SlideLargeImage
+        image={image}
+        projectYear={projectYear}
+        projectName={projectName}
+      />
       <Box
         as={motion.div}
         variants={cardVariants}
         initial="offscreen"
         whileInView="onscreen"
         viewport={{ once: true, amount: 0.8 }}
-        display={{ base: "none", md: "grid" }}
-        className="slide-image"
-        gridColumn={{
-          base: "1 / span 16",
-          md: "span 14 / -1",
-          lg: "span 11 / -1",
-        }}
-        gridRow="1 / -1"
-        gridTemplateColumns={{ md: "repeat(21, 1fr)" }}
-        gridTemplateRows={{ md: "repeat(34, 1fr)" }}
-        bgImage={{ md: `/tablet/${image}`, lg: `/desktop/${image}` }}
-        bgSize="cover"
-        bgRepeat="no-repeat"
-      >
-        <Box
-          gridColumn={{ md: "span 10 / -3", lg: "span 10 / -5" }}
-          gridRow={{ md: "span 3 / -3", lg: "span 5 / -3" }}
-          color="white"
-          textAlign="right"
-          fontSize={{ base: "", md: "1rem", xl: "1.25rem" }}
-          lineHeight={{ base: "", md: "1.25rem", lg: "", xl: "2rem" }}
-        >
-          <Text fontWeight="extrabold">{projectName}</Text>
-          <Text>{projectYear} Project</Text>
-        </Box>
-      </Box>
-      <Box
-        as={motion.div}
-        variants={cardVariants}
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
+        exit="exit"
         display={{ base: "block", md: "none" }}
         gridColumn={{ base: "1 / -1" }}
         gridRow={{ base: "1", md: "1 / 2" }}
