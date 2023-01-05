@@ -1,4 +1,17 @@
 import { Box, Flex, Grid, Text, Image } from "@chakra-ui/react";
+import { motion, Variants } from "framer-motion";
+
+const cardVariants: Variants = {
+  offscreen: {
+    scale: 0,
+    x: 90,
+  },
+  onscreen: {
+    scale: 1,
+    x: 0,
+    transition: { x: { duration: 1 } },
+  },
+};
 
 interface SlideImageProps {
   image: string;
@@ -13,7 +26,12 @@ const SlideImage: React.FC<SlideImageProps> = ({
 }) => {
   return (
     <>
-      <Grid
+      <Box
+        as={motion.div}
+        variants={cardVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
         display={{ base: "none", md: "grid" }}
         className="slide-image"
         gridColumn={{
@@ -22,8 +40,8 @@ const SlideImage: React.FC<SlideImageProps> = ({
           lg: "span 11 / -1",
         }}
         gridRow="1 / -1"
-        templateColumns={{ md: "repeat(21, 1fr)" }}
-        templateRows={{ md: "repeat(34, 1fr)" }}
+        gridTemplateColumns={{ md: "repeat(21, 1fr)" }}
+        gridTemplateRows={{ md: "repeat(34, 1fr)" }}
         bgImage={{ md: `/tablet/${image}`, lg: `/desktop/${image}` }}
         bgSize="cover"
         bgRepeat="no-repeat"
@@ -39,8 +57,13 @@ const SlideImage: React.FC<SlideImageProps> = ({
           <Text fontWeight="extrabold">{projectName}</Text>
           <Text>{projectYear} Project</Text>
         </Box>
-      </Grid>
+      </Box>
       <Box
+        as={motion.div}
+        variants={cardVariants}
+        initial="offscreen"
+        whileInView="onscreen"
+        viewport={{ once: true, amount: 0.8 }}
         display={{ base: "block", md: "none" }}
         gridColumn={{ base: "1 / -1" }}
         gridRow={{ base: "1", md: "1 / 2" }}
