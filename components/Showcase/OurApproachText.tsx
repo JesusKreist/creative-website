@@ -1,6 +1,12 @@
 import { Box, Grid, Text } from "@chakra-ui/react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import { slideFromLeft } from "../../animation/animationVariants";
 
 const OurApproachText = () => {
+  const boxRef = useRef(null);
+  const isInView = useInView(boxRef, { once: true });
+
   return (
     <Grid
       overflow="hidden"
@@ -26,8 +32,13 @@ const OurApproachText = () => {
         lg: "repeat(16, 1fr)",
       }}
       bgColor={{ base: "brand.red", md: "unset" }}
+      ref={boxRef}
     >
       <Box
+        as={motion.div}
+        variants={slideFromLeft()}
+        initial="start"
+        animate={isInView ? "end" : ""}
         gridRow={{ md: "5 / span 10" }}
         gridColumn={{
           base: "2 / -2",
