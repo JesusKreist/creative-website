@@ -1,5 +1,8 @@
 import { Grid, Flex, IconButton, Box, Text, Image } from "@chakra-ui/react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { RxChevronLeft, RxChevronRight } from "react-icons/rx";
+import { slideFromLeft } from "../../animation/animationVariants";
 
 interface SlideTextProps {
   slideTagLine: string;
@@ -12,6 +15,9 @@ const SlideText: React.FC<SlideTextProps> = ({
   handleNextSlide,
   handlePreviousSlide,
 }) => {
+  const boxRef = useRef(null);
+  const isInView = useInView(boxRef, { once: true });
+
   return (
     <Grid
       className="slider-text"
@@ -28,6 +34,7 @@ const SlideText: React.FC<SlideTextProps> = ({
         lg: "repeat(16, 1fr)",
       }}
       position="relative"
+      ref={boxRef}
     >
       <Box
         width={{ base: "63px", lg: "100px", xl: "135px" }}
@@ -39,6 +46,10 @@ const SlideText: React.FC<SlideTextProps> = ({
         <Image src="/desktop/bg-pattern-wavy-white.svg" alt=""></Image>
       </Box>
       <Flex
+        as={motion.div}
+        variants={slideFromLeft()}
+        initial="start"
+        animate={isInView ? "end" : ""}
         direction="column"
         height="100%"
         justifyContent="center"
