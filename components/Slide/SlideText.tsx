@@ -62,7 +62,7 @@ const SlideText: React.FC<SlideTextProps> = ({
       >
         <Text
           key={slideTagLine}
-          as={motion.div}
+          as={motion.p}
           variants={slideFromLeft()}
           initial="start"
           animate={isInView ? "end" : ""}
