@@ -46,10 +46,6 @@ const SlideText: React.FC<SlideTextProps> = ({
         <Image src="/desktop/bg-pattern-wavy-white.svg" alt=""></Image>
       </Box>
       <Flex
-        // as={motion.div}
-        // variants={slideFromLeft()}
-        // initial="start"
-        // animate={isInView ? "end" : ""}
         direction="column"
         height="100%"
         justifyContent="center"
@@ -65,6 +61,11 @@ const SlideText: React.FC<SlideTextProps> = ({
         position="relative"
       >
         <Text
+          key={slideTagLine}
+          as={motion.div}
+          variants={slideFromLeft()}
+          initial="start"
+          animate={isInView ? "end" : ""}
           fontSize={{ base: "2rem", lg: "3.5rem" }}
           lineHeight={{ base: "2.5rem", lg: "4rem" }}
           fontWeight="extrabold"
