@@ -14,13 +14,13 @@ import { useEffect, useRef } from "react";
 import { slideFromRight } from "../../animation/animationVariants";
 
 const DesignIsStrategicText = () => {
-  const { ref, inView, entry } = useInView({ threshold: 0.5 });
+  const { ref, inView } = useInView({ threshold: 0.3, triggerOnce: true });
   // const boxRef = useRef(null);
   // const isInView = useInView(boxRef, { once: false, amount: 0.5 });
 
-  useEffect(() => {
-    console.log("Element is in view", inView);
-  }, [inView]);
+  // useEffect(() => {
+  //   console.log("Element is in view", inView);
+  // }, [inView]);
 
   return (
     <Grid
@@ -42,7 +42,6 @@ const DesignIsStrategicText = () => {
         lg: "repeat(18, 1fr)",
       }}
       position="relative"
-      // ref={boxRef}
       ref={ref}
     >
       <Box
