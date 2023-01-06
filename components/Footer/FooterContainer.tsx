@@ -5,8 +5,6 @@ interface FooterContainerProps {
   children: React.ReactNode;
 }
 
-// const FancyButton = React.forwardRef((props, ref) => {});
-
 const FooterContainer = React.forwardRef<HTMLDivElement, FooterContainerProps>(
   ({ children }, ref) => {
     return (

@@ -33,7 +33,6 @@ const SlideLargeImage: React.FC<SlideImageProps> = ({
       initial="offscreen"
       whileInView="onscreen"
       viewport={{ once: true, amount: 0.8 }}
-      exit="exit"
       display={{ base: "none", md: "grid" }}
       className="slide-image"
       gridColumn={{

@@ -8,16 +8,12 @@ import {
   Grid,
 } from "@chakra-ui/react";
 import { motion, useInView } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { slideFromRight } from "../../animation/animationVariants";
 
 const DesignIsStrategicText = () => {
   const boxRef = useRef(null);
-  const isInView = useInView(boxRef, { once: true });
-
-  useEffect(() => {
-    console.log("Element is in view: ", isInView);
-  }, [isInView]);
+  const isInView = useInView(boxRef, { once: false });
 
   return (
     <Grid
