@@ -22,7 +22,7 @@ const LaptopPicture = () => {
         variants={cardVariants}
         initial="offscreen"
         whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
+        viewport={{ once: true, amount: "all" }}
         className="picture-laptop"
         overflow="hidden"
         position="relative"
