@@ -27,7 +27,7 @@ const SlideMobileImage: React.FC<SlideImageProps> = ({
 }) => {
   return (
     <Box
-      key={projectName}
+      key={`${projectName}-mobile`}
       as={motion.div}
       variants={cardVariants}
       initial="offscreen"

@@ -61,7 +61,7 @@ const SlideText: React.FC<SlideTextProps> = ({
         position="relative"
       >
         <Text
-          key={slideTagLine}
+          // key={slideTagLine}
           as={motion.p}
           variants={slideFromLeft()}
           initial="start"

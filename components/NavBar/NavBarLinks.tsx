@@ -46,7 +46,11 @@ const NavBarLinks = () => {
       alignItems="center"
     >
       <NavBarLinkItems />
-      <Button variant={{ base: "brandBlackSmall", xl: "brandBlackBig" }}>
+      <Button
+        as={motion.button}
+        whileHover={{ scale: 1.3, originX: 0 }}
+        variant={{ base: "brandBlackSmall", xl: "brandBlackBig" }}
+      >
         Schedule a Call
       </Button>
     </Flex>

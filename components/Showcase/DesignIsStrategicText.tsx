@@ -7,13 +7,20 @@ import {
   Image,
   Grid,
 } from "@chakra-ui/react";
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+// import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { useEffect, useRef } from "react";
 import { slideFromRight } from "../../animation/animationVariants";
 
 const DesignIsStrategicText = () => {
-  const boxRef = useRef(null);
-  const isInView = useInView(boxRef, { once: false });
+  const { ref, inView, entry } = useInView({ threshold: 0.5 });
+  // const boxRef = useRef(null);
+  // const isInView = useInView(boxRef, { once: false, amount: 0.5 });
+
+  useEffect(() => {
+    console.log("Element is in view", inView);
+  }, [inView]);
 
   return (
     <Grid
@@ -35,7 +42,8 @@ const DesignIsStrategicText = () => {
         lg: "repeat(18, 1fr)",
       }}
       position="relative"
-      ref={boxRef}
+      // ref={boxRef}
+      ref={ref}
     >
       <Box
         width={{ base: "63px", lg: "100px", xl: "135px" }}
@@ -51,7 +59,7 @@ const DesignIsStrategicText = () => {
         as={motion.div}
         variants={slideFromRight()}
         initial="start"
-        animate={isInView ? "end" : ""}
+        animate={inView ? "end" : ""}
         width="90%"
         maxWidth="28rem"
         color="white"

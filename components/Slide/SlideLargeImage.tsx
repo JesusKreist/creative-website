@@ -27,7 +27,7 @@ const SlideLargeImage: React.FC<SlideImageProps> = ({
 }) => {
   return (
     <Box
-      key={projectName}
+      key={`${projectName}-large`}
       as={motion.div}
       variants={cardVariants}
       initial="offscreen"
